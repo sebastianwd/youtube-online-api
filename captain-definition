@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM node:14.15.0-alpine",
+    "FROM nikolaik/python-nodejs:python3.9-nodejs14-alpine",
     "RUN mkdir -p /usr/src/app",
     "WORKDIR /usr/src/app",
     "COPY ./package.json /usr/src/app/",
