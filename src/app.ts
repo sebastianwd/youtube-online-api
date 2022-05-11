@@ -14,8 +14,8 @@ const playgroundEndpoint = '/playground'
 
 const app = express()
 
-app.get('/', async () => {
-  return { hello: 'wait-on 💨' }
+app.get('/', (_, res) => {
+  return res.json({ hello: 'wait-on 💨' })
 })
 
 app.use(
