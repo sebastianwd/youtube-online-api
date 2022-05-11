@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowJs": true,
+    "module": "commonjs",
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "declaration": false,
+    "strict": true,
+    "composite": false,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "inlineSourceMap": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "sourceMap": false,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+  },
+  "exclude": ["node_modules", "dist", ".eslintrc.js", "babel.config.js"],
+  "include": ["src"]
+}

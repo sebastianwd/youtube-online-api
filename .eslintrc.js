@@ -1,0 +1,43 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: '.',
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  ignorePatterns: ['.eslintrc.js', 'babel.config.js'],
+  extends: [
+    'airbnb-typescript/base',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['@typescript-eslint', 'import', 'promise'],
+  rules: {
+    'arrow-body-style': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/lines-between-class-members': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
+    'import/no-unresolved': 'off',
+    'prettier/prettier': 'error',
+    'import/extensions': 'off',
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'no-console': 'off',
+    strict: 'off',
+    'import/prefer-default-export': 'off',
+    'object-shorthand': 'off',
+    'class-methods-use-this': 'off',
+    'no-var': 'error',
+  },
+  globals: {
+    __DEV__: true,
+  },
+}
