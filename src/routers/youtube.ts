@@ -84,3 +84,29 @@ export const youtubeRouter = createRouter()
       }
     },
   })
+  .query('/getVideoUrl', {
+    input: z.object({
+      url: z.string(),
+    }),
+    output: z.string(),
+    async resolve({ input }) {
+      try {
+        logger.info(`getting video url from: ${input.url}`)
+
+        const result = await youtubedl(input.url, {
+          format: 'best',
+          geoBypass: true,
+          getUrl: true,
+        })
+
+        return <string>(<unknown>result)
+      } catch (error) {
+        logger.error(error)
+
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: `No results found for url '${input.url}'`,
+        })
+      }
+    },
+  })
